@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :new, :create]
   end
   resources :reviews, only: [:destroy]
+  get "/dashboards", to: "dashboards#dashboard", as: :dashboard
 end
