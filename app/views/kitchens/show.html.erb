@@ -2,4 +2,10 @@
   <h1><%= @kitchen.name %></h1>
   <h3><%= @kitchen.address %></h3>
   <h2><%= @kitchen.price_by_hour %>€/heure</h2>
+  <p><%= @kitchen.description %></p>
+  <ul>
+    <% @kitchen.equipment.to_a.each do |tool| %>
+      <li><%= tool %></li>
+    <% end %>
+  </ul>
 </div>
