@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.where(:kitchen_id = params[:kitchen_id])
+    # @bookings = Booking.where(kitchen_id: params[:kitchen_id])
+    # dans Dashboard, @my_bookings = current_user.bookings
   end
 
   def show
