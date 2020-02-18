@@ -17,7 +17,7 @@ class KitchensController < ApplicationController
     @kitchen = Kitchen.new(kitchen_params)
     @kitchen.user = @user
       if @kitchen.save
-        redirect_to dashboard_path
+        redirect_to kitchen_path(@kitchen)
       else
         render :new
       end
@@ -30,7 +30,7 @@ class KitchensController < ApplicationController
   def update
     @kitchen = Kitchen.find(params[:id])
     @kitchen.update(kitchen_params)
-    redirect_to kitchen_path
+    redirect_to kitchen_path(@kitchen)
   end
 
   def destroy

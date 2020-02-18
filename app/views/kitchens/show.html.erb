@@ -2,13 +2,13 @@
   <h1><%= @kitchen.name %></h1>
   <h3><%= @kitchen.address %></h3>
   <h2><%= @kitchen.price_by_hour %>€/heure, <%= @kitchen.capacity %> cuisiniers</h2>
-  <% @kitchen.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% @kitchen.photos.each do |kitchen| %>
+    <%= cl_image_tag kitchen.key, height: 300, width: 400, crop: :fill %>
   <% end %>
   <p><%= @kitchen.description %></p>
   <ul>
     <% @kitchen.equipment.split(",").each do |tool| %>
-      <li><%= tool %></li>
+      <li><%= tool.capitalize %></li>
     <% end %>
   </ul>
 </div>
