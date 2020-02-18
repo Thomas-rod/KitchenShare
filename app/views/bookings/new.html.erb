@@ -1,2 +1,13 @@
+<div class="container my-5">
+  <h1>Réservez la cuisine de <%= @kitchen.user.first_name %> </h1>
+
+    <%= simple_form_for [@kitchen, @booking] do |f| %>
+      <%= f.input :number_of_people, collection: (1..@kitchen.capacity) %>
+      <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Reservez", class: "btn btn-primary" %>
+    <% end %>
+</div>
+
 
 
