@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Dis-nous en plus sur ta cuisine</h1>
+
+  <%= simple_form_for [@user, @kitchen] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :description %>
+    <%= f.input :equipment %>
+    <%= f.input :price_by_hour %>
+    <%#= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+

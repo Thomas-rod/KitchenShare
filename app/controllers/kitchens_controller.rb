@@ -9,6 +9,7 @@ class KitchensController < ApplicationController
 
   def new
     @kitchen = Kitchen.new
+    @user = current_user
   end
 
   def create
