@@ -4,7 +4,7 @@
   <h2><%= @kitchen.price_by_hour %>€/heure</h2>
   <p><%= @kitchen.description %></p>
   <ul>
-    <% @kitchen.equipment.to_a.each do |tool| %>
+    <% @kitchen.equipment.split(",").each do |tool| %>
       <li><%= tool %></li>
     <% end %>
   </ul>
