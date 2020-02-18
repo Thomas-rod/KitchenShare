@@ -1,7 +1,7 @@
 class KitchensController < ApplicationController
   def index
     if params[:query].present?
-      @kitchens = Kitchen.where(title: params[:query])
+      @kitchens = Kitchen.where(city: params[:query])
     else
       @kitchens = Kitchen.all
     end
