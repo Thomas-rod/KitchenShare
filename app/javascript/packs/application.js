@@ -4,6 +4,7 @@ require("channels")
 require("turbolinks").start()
 
 import "bootstrap";
+import "../plugins/flatpickr";
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
