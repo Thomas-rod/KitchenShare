@@ -9,6 +9,7 @@ class KitchensController < ApplicationController
 
   def new
     @kitchen = Kitchen.new
+    @user = current_user
   end
 
   def create
@@ -16,7 +17,7 @@ class KitchensController < ApplicationController
     @kitchen = Kitchen.new(kitchen_params)
     @kitchen.user = @user
       if @kitchen.save
-        redirect_to dashboard_path
+        redirect_to kitchen_path(@kitchen)
       else
         render :new
       end
@@ -29,7 +30,7 @@ class KitchensController < ApplicationController
   def update
     @kitchen = Kitchen.find(params[:id])
     @kitchen.update(kitchen_params)
-    redirect_to kitchen_path
+    redirect_to kitchen_path(@kitchen)
   end
 
   def destroy
@@ -41,6 +42,6 @@ class KitchensController < ApplicationController
   private
 
   def kitchen_params
-    params.require(:kitchen).permit(:city, :address, :capacity, :description, :name, :equipment, :price_by_hour)
+    params.require(:kitchen).permit(:city, :address, :capacity, :description, :name, :equipment, :price_by_hour, photos: [])
   end
 end
