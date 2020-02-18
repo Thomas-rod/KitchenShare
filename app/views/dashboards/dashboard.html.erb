@@ -1,8 +1,8 @@
 <h1>This a show</h1>
 
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.kitchens %>
+<p><%= @user.first_name %></p>
+<p><%= @user.last_name %></p>
+<p><%= @user.kitchens.description %></p>
 
 <%= link_to "Voir toutes les cuisines", kitchens_path %>
 
