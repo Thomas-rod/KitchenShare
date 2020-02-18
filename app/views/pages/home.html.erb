@@ -20,7 +20,7 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputCity">Date arrivée</label>
+        <label for="inputCity">Date d'arrivée</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
@@ -38,7 +38,18 @@
         </div>
       </div>
     </div>
-      <a class="btn btn-flat" href="#"> Rechercher </a>
+      <!-- <a class="btn btn-flat" href="#"> Rechercher </a> -->
+      <%= link_to "Rechercher", kitchens_path, class: "btn btn-flat" %>
+
+      <%= form_tag kitchens_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a kitchen"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+
   </form>
     <div class="col-md-6 offset-md-2">
       <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
