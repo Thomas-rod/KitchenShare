@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @kitchen.name %></h1>
+  <h3><%= @kitchen.address %></h3>
+  <h2><%= @kitchen.price_by_hour %>€/heure</h2>
+  <p><%= @kitchen.description %></p>
+  <ul>
+    <% @kitchen.equipment.split(",").each do |tool| %>
+      <li><%= tool %></li>
+    <% end %>
+  </ul>
+</div>
