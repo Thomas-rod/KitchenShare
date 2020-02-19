@@ -18,8 +18,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @user = current_user
     @kitchen = Kitchen.find(params[:kitchen_id])
-    @booking.kitchen_id = @kitchen
-    @booking.user_id = @user
+    @booking.kitchen = @kitchen
+    @booking.user = @user
     if @booking.save
       redirect_to dashboard_path
     else
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-  params.require(:booking).permit(:start_time, :end_time)
+  params.require(:booking).permit(:start_time, :end_time, :number_of_people)
   end
 
 end

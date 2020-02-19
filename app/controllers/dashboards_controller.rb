@@ -10,4 +10,5 @@ class DashboardsController < ApplicationController
     # raise
     # @kitchens = Kitchen.where(user: current_user)
   end
+
 end
