@@ -5,7 +5,7 @@
       <%= f.input :number_of_people, collection: (1..@kitchen.capacity) %>
       <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, link_to "Reservez", dashboard_path, class: "btn btn-primary" %>
+      <%= f.button :submit, "Reservez", class: "btn btn-primary" %>
     <% end %>
 </div>
 
