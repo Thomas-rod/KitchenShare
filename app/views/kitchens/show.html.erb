@@ -9,22 +9,29 @@
       <% else %>
         <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="260" height="190">
       <% end %>
-
-      <h2><%= @kitchen.price_by_hour %>€/heure, <%= @kitchen.capacity %> cuisiniers</h2>
-      <h3><%= @kitchen.address %></h3>
-      <p><%= @kitchen.description %></p>
-      <ul> <strong>Équipements</strong>
-        <% @kitchen.equipment.split(",").each do |tool| %>
-          <li><%= tool.capitalize %></li>
-        <% end %>
-      </ul>
+      <div class="border-show">
+        <p><%= @kitchen.address %></p>
+        <p><%= @kitchen.price_by_hour %>€/heure, <%= @kitchen.capacity %> cuisiniers</p>
+      </div>
+      <div class="border-show">
+        <p><strong>Cuisinier</strong></p>
+        <p><i><%= @kitchen.description %></i></p>
+      </div>
+      <div class="border-show">
+        <p><strong>Équipements</strong></p>
+        <ul>
+          <% @kitchen.equipment.split(",").each do |tool| %>
+            <li><%= tool.capitalize %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
 
-    <div class="wrapper-right">
+    <div class="wrapper-right ml-5">
       <!-- IT WILL BE THE MAP HERE  -->
-      <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="500" height="400">
-      <%= link_to "Je réserve cette cuisine", new_kitchen_booking_path(@kitchen), class: "btn-koobo" %>
+      <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="600" height="400">
+      <button class="btn-koobo">  <%= link_to "Je réserve cette cuisine", new_kitchen_booking_path(@kitchen) %> </button>
     </div>
   </div>
-  <%= link_to "Retournez à ma recherche", kitchens_path %>
+  <button id="back-btn-koobo"class="btn-koobo"><%= link_to "Retournez à ma recherche", kitchens_path %></button>
 </div>

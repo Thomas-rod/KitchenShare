@@ -40,13 +40,24 @@
   color: white;
 }
 
-.btn-koobo {
+button.btn-koobo {
   background-color: #EE8572;
   border-radius: 5px;
-  color: #FDF5F3;
-  padding:20px;
-  margin-top:30px;
+  padding: 10px 20px;
+  margin-top: 40px;
+  text-decoration: none;
 }
+
+button.btn-koobo:hover {
+  background-color: rgba(238, 133, 114, 0.5);
+
+}
+
+button.btn-koobo a {
+  color: white;
+
+}
+
 
 // .btn-koobo a {
 //   margin-top:30px;
