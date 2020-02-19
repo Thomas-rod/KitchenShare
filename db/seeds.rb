@@ -15,3 +15,8 @@ roxane_kitchen = Kitchen.create!(city: "Paris", address: "4 rue des Prêtres Sai
 thomas_kitchen = Kitchen.create!(city: "Paris", address: "14 rue des Lyonnais", capacity: 2, user: thomas, description: "Superbe cuisine bien aménagée et très peu utilisée", name: "Thomas' kitchen", equipment: "four, micro-ondes, plaques, nombreux plats", price_by_hour: 10)
 john_kitchen = Kitchen.create!(city: "Bezons", address: "2 avenue d'Argenteuil", capacity: 2, user: john, description: "Meilleure cuisine de Bezons", name: "John's kitchen", equipment: "four, plaques, bols, collection de couteaux", price_by_hour: 10)
 mao_kitchen = Kitchen.create!(city: "Montreuil", address: "12 rue Madeleine Laffitte", capacity: 3, user: mao, description: "Cuistot connu dans tout Montreuil je vous propose également mes conseils", name: "Mao's kitchen", equipment: "micro-ondes, plaques, four, robot", price_by_hour: 15)
+
+roxane_booking = Booking.create!(kitchen: thomas_kitchen, user: roxane, start_time: "19/02/2020", end_time: "20/02/2020")
+thomas_booking = Booking.create!(kitchen: john_kitchen, user: thomas, start_time: "23/02/2020", end_time: "24/02/2020")
+john_booking = Booking.create!(kitchen: mao_kitchen, user: john, start_time: "25/02/2020", end_time: "26/02/2020")
+mao_booking = Booking.create!(kitchen: roxane_kitchen, user: mao, start_time: "02/03/2020", end_time: "03/03/2020")
