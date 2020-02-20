@@ -4,7 +4,7 @@
 }
 .profile-card-1 {
   font-family: 'Poppins', Arial, sans-serif;
-  margin-right:50px;
+  margin-left:160px;
   margin-top: 15px;
   float: left;
   overflow: hidden;
@@ -87,6 +87,7 @@
 
 .dashboard-card {
   width: 573px;
+  margin-bottom: 20px;
 }
 
 .dashboard-cards {
@@ -94,14 +95,18 @@
   width: auto !important;
 }
 
-.wrapper-right {
-  // margin: 0 auto;
+.dashboard-cards img {
+  width: 573px;
+}
+
+.dashboard-wrapper-right {
+ margin: 0 auto;
  min-width: 620px;
  padding: 15px;
  margin-right: 158px;
 }
 
-.wrapper-left {
+.dashboard-wrapper-left {
   position: sticky;
   top:15px;
   align-self: flex-start;
