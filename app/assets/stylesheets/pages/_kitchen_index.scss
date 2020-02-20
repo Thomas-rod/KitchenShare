@@ -1,5 +1,5 @@
-.container {
-  // display:flex;
+.index-container {
+  display: flex;
 }
 
 
@@ -19,7 +19,7 @@
 //   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 // }
 
-.cards {
+.cards-index {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 25px;
