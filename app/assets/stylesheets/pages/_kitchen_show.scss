@@ -6,6 +6,8 @@
   margin-right:10px;
   list-style: none;
   padding: 10px;
+  height: 300px;
+
 }
 
 // WRAPPER KITCHEN SHOW
@@ -46,6 +48,14 @@
 }
 .border-show {
   border-bottom: 1px solid rgba(40, 40, 40, 0.2);
+  & li {
+    display:inline;
+    margin: 0px;
+
+  }
+}
+
+.border-show-last {
   & li {
     display:inline;
     margin: 0px;

@@ -1,16 +1,31 @@
 <div class="container kitchen-photos">
   <div class="banner-show-kitchen">
-    <ul>
-        <% if @kitchen.photos.attached? %>
-          <% @kitchen.photos.each do |kitchen| %>
-            <li>
-              <%= cl_image_tag kitchen.key, height: 300, width: 400, crop: :fill %>
-            </li>
+    <% if @kitchen.photos.attached? %>
+      <div class="card-trip">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @kitchen.photos[0].key, class: "d-block w-100 image", style: "height: 300px"%>
+            </div>
+            <% @kitchen.photos[1..@kitchen.photos.count].each do |photo| %>
+              <div class="carousel-item ">
+                <%= cl_image_tag photo.key, class: "d-block w-100 image", style: "height: 300px"%>
+              </div>
             <% end %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="260" height="190">
-        <% end %>
-      </ul>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="260" height="190">
+    <% end %>
   </div>
   <div class="wrapper">
     <div class="wrapper-left">
@@ -24,7 +39,7 @@
         <p><i class="fas fa-euro-sign mr-3"></i><%= @kitchen.price_by_hour %>€/heure</p>
         <p><i class="fas fa-cookie mr-3"></i><%= @kitchen.capacity %> cuisinier</p>
       </div>
-      <div class="border-show">
+      <div class="border-show-last">
         <p><strong>Équipements</strong></p>
         <ul class="mb-3">
           <% @kitchen.equipment.split(",").each do |tool| %>
@@ -35,7 +50,7 @@
     </div>
     <div class="wrapper-right ml-5">
       <div id="map" class="mb-3"
-         style="width: 100%;
+         style="width: 96%;
          height: 40vh;"
          data-markers="<%= @marker.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
