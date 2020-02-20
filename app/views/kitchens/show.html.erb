@@ -1,37 +1,46 @@
 <div class="container kitchen-photos">
+  <div class="banner-show-kitchen">
+    <ul>
+        <% if @kitchen.photos.attached? %>
+          <% @kitchen.photos.each do |kitchen| %>
+            <li>
+              <%= cl_image_tag kitchen.key, height: 300, width: 400, crop: :fill %>
+            </li>
+            <% end %>
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="260" height="190">
+        <% end %>
+      </ul>
+  </div>
   <div class="wrapper">
     <div class="wrapper-left">
-      <h1><%= @kitchen.name %></h1>
-      <% if @kitchen.photos.attached? %>
-        <% @kitchen.photos.each do |kitchen| %>
-        <%= cl_image_tag kitchen.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      <% else %>
-        <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="260" height="190">
-      <% end %>
+      <h1><%= @kitchen.name %><%= cl_image_tag User.find(@kitchen.user_id).photo.key, height: 300, width: 400, crop: :fill, class: "avatar-show ml-3" %></h1>
       <div class="border-show">
-        <p><%= @kitchen.address %></p>
-        <p><%= @kitchen.price_by_hour %>€/heure, <%= @kitchen.capacity %> cuisiniers</p>
+        <p><strong>Description</strong></p>
+        <p><i>"<%= @kitchen.description %>"</i></p>
       </div>
       <div class="border-show">
-        <p><strong>Cuisinier</strong></p>
-        <p><i><%= @kitchen.description %></i></p>
+        <p><i class="fas fa-map-pin mr-3"></i></i><%= @kitchen.address %></p>
+        <p><i class="fas fa-euro-sign mr-3"></i><%= @kitchen.price_by_hour %>€/heure</p>
+        <p><i class="fas fa-cookie mr-3"></i><%= @kitchen.capacity %> cuisinier</p>
       </div>
       <div class="border-show">
         <p><strong>Équipements</strong></p>
-        <ul>
+        <ul class="mb-3">
           <% @kitchen.equipment.split(",").each do |tool| %>
-            <li><%= tool.capitalize %></li>
+            <li><%= tool.capitalize() %></li>
           <% end %>
         </ul>
       </div>
     </div>
-
     <div class="wrapper-right ml-5">
-      <!-- IT WILL BE THE MAP HERE  -->
-      <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="" width="600" height="400">
-      <button class="btn-koobo">  <%= link_to "Je réserve cette cuisine", new_kitchen_booking_path(@kitchen) %> </button>
+      <div id="map" class="mb-3"
+         style="width: 100%;
+         height: 40vh;"
+         data-markers="<%= @marker.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <button class="btn-koobo">  <%= link_to "Je réserve cette cuisine", new_kitchen_booking_path(@kitchen) %></button>
     </div>
   </div>
-  <button id="back-btn-koobo"class="btn-koobo"><%= link_to "Retourner à ma recherche", kitchens_path %></button>
 </div>
