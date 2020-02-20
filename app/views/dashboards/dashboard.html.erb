@@ -1,23 +1,21 @@
-
-  <div class="container-fluid dashboard-flex">
-    <div class="wrapper-left">
-      <div class="container p-2 bd-highlight">
-        <div class="row my-5">
-          <div class="card profile-card-1">
-            <img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile-image" class="profile"/>
-              <div class="card-content">
-                <h2><%= @user.first_name %>  <%= @user.last_name %></h2>
-              <div class="reviews mt-3">
-                <a href="#">Vos avis</a>
-              </div>
-              </div>
-          </div>
+<div class="container-fluid dashboard-flex">
+  <div class="dashboard-wrapper-left">
+    <div class="container p-2 bd-highlight">
+      <div class="row my-5">
+        <div class="card profile-card-1">
+          <img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile-image" class="profile"/>
+            <div class="card-content">
+              <h2><%= @user.first_name %>  <%= @user.last_name %></h2>
+            <div class="reviews mt-3">
+              <a href="#">Vos avis</a>
+            </div>
+            </div>
         </div>
       </div>
     </div>
-    <div class="wrapper-right">
-
+  </div>
+  <div class="dashboard-wrapper-right">
     <div class="container p-2 mt-5 bd-highlight">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -28,7 +26,7 @@
       </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="dashboard-cards cards">
+            <div class="dashboard-cards ">
               <% @kitchens.each do |kitchen| %>
                 <div class="dashboard-card card-trip">
                       <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
@@ -45,7 +43,7 @@
             </div>
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="dashboard-cards cards">
+            <div class="dashboard-cards">
               <% @kitchens.each do |kitchen| %>
                 <div class="dashboard-card card-trip">
                       <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
@@ -62,7 +60,7 @@
             </div>
           </div>
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <div class="dashboard-cards cards">
+            <div class="dashboard-cards">
               <% @kitchens.each do |kitchen| %>
                 <div class="dashboard-card card-trip">
                       <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
