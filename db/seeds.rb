@@ -29,10 +29,18 @@ mao = User.create!(first_name: "Maodo", last_name: "Diop", address: "12 rue Made
 attach_photo("https://avatars1.githubusercontent.com/u/56120487?v=4", mao)
 mao.save
 
-roxane_kitchen = Kitchen.create!(city: "Paris", address: "4 rue des Prêtres Saint-Séverin", capacity: 1, user: roxane, description: "Cuisine qui fait l'affaire avec vue sur le Panthéon", name: "Roxane's kitchen", equipment: "micro-ondes, plaques, fouet, moule", price_by_hour: 5)
+roxane_kitchen = Kitchen.create!(city: "Paris", address: "4 rue des Prêtres Saint-Séverin", capacity: 1, user: roxane, description: "Cuisine qui fait l'affaire avec vue sur le Panthéon", name: "Roxane's kitchen", equipment: "micro-ondes, plaques, fouet, moule", price_by_hour: 5, photos: [""])
+# attach_photo("https://avatars0.githubusercontent.com/u/54777799?v=4", roxane)
+roxane_kitchen.save
 thomas_kitchen = Kitchen.create!(city: "Paris", address: "14 rue des Lyonnais", capacity: 2, user: thomas, description: "Superbe cuisine bien aménagée et très peu utilisée", name: "Thomas' kitchen", equipment: "four, micro-ondes, plaques, nombreux plats", price_by_hour: 10)
+# attach_photo("https://avatars0.githubusercontent.com/u/54777799?v=4", thomas_kitchen)
+thomas_kitchen.save
 john_kitchen = Kitchen.create!(city: "Bezons", address: "2 avenue d'Argenteuil", capacity: 2, user: john, description: "Meilleure cuisine de Bezons", name: "John's kitchen", equipment: "four, plaques, bols, collection de couteaux", price_by_hour: 10)
+# attach_photo("https://avatars0.githubusercontent.com/u/54777799?v=4", john_kitchen)
+john_kitchen.save
 mao_kitchen = Kitchen.create!(city: "Montreuil", address: "12 rue Madeleine Laffitte", capacity: 3, user: mao, description: "Cuistot connu dans tout Montreuil je vous propose également mes conseils", name: "Mao's kitchen", equipment: "micro-ondes, plaques, four, robot", price_by_hour: 15)
+# attach_photo("https://avatars0.githubusercontent.com/u/54777799?v=4", mao_kitchen)
+mao_kitchen.save
 
 roxane_booking = Booking.create!(kitchen: thomas_kitchen, user: roxane, start_time: "19/02/2020", end_time: "20/02/2020", number_of_people: 1)
 thomas_booking = Booking.create!(kitchen: john_kitchen, user: thomas, start_time: "23/02/2020", end_time: "24/02/2020", number_of_people: 2)
