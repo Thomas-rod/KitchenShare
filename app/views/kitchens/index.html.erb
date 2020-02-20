@@ -14,8 +14,11 @@
     <li data-target="#carouselExampleIndicators<%= number %>" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-  <% kitchen.photos.each do |photo| %>
-    <div class="carousel-item active ">
+    <div class="carousel-item active">
+      <%= cl_image_tag kitchen.photos[0].key, class: "d-block w-100 image"%>
+    </div>
+  <% kitchen.photos[1..kitchen.photos.count].each do |photo| %>
+    <div class="carousel-item ">
       <%= cl_image_tag photo.key, class: "d-block w-100 image"%>
     </div>
   <% end %>
@@ -35,7 +38,7 @@
           <p><%= kitchen.address %>, <%= kitchen.city %></p>
         </div>
         <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <%= cl_image_tag kitchen.user.photo.key , class: "card-trip-user avatar-bordered" %>
       </div>
   </div>
 <% end %>
