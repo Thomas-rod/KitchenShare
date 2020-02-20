@@ -40,8 +40,18 @@
     </div>
 
       <%= link_to "Rechercher", kitchens_path, class: "btn btn-flat" %>
-
   </form>
+
+  <%= form_tag kitchens_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Ville"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
     <div class="col-md-6 offset-md-2">
       <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
       <p>Nos propriétaires fournissent leurs cuisines equipées pour vous rendre service.</p>
