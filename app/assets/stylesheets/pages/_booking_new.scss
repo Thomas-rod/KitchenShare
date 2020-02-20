@@ -1,0 +1,22 @@
+.flex-column {
+  width: 200px;
+  align-items: center;
+}
+
+.btn-koobo-booking {
+  background-color: #EE8572;
+  border-radius: 5px;
+  color:white;
+  text-decoration: none;
+  & :hover {
+    color:white;
+  }
+}
+
+.btn-koobo-booking > input{
+  color: white;
+}
+
+.wrapper-booking {
+  width: 200px;
+}
