@@ -1,16 +1,40 @@
 // Specific CSS for your show-kitchens
 
+// BANNER KITCHEN SHOW
+.banner-show-kitchen li {
+  display:inline;
+  margin-right:10px;
+  list-style: none;
+  padding: 10px;
+  height: 300px;
+
+}
+
+// WRAPPER KITCHEN SHOW
 .wrapper {
   margin-top: 30px;
   display:flex;
   justify-content: space-between;
   align-items: start;
 }
-
 .wrapper-left {
   & p {
     margin-top: 10px;
   }
+  & ul {
+    margin: 0px;
+    padding:0px;
+  }
+  & li {
+    list-style:inline;
+    margin-right:10px;
+    list-style: none;
+    padding: 10px;
+  }
+}
+.wrapper-right {
+  text-align:center;
+  flex-grow: 1;
   & ul {
     margin: 0px;
     padding:0px;
@@ -22,14 +46,23 @@
     padding: 10px;
   }
 }
-.wrapper-right {
-  text-align:center;
-}
-
 .border-show {
   border-bottom: 1px solid rgba(40, 40, 40, 0.2);
+  & li {
+    display:inline;
+    margin: 0px;
+
+  }
 }
 
+.border-show-last {
+  & li {
+    display:inline;
+    margin: 0px;
+  }
+}
+
+// BUTTON KITCHEN SHOW
 button#back-btn-koobo {
   background-color: rgba(238, 133, 114, 0.5);
 }
@@ -37,4 +70,14 @@ button#back-btn-koobo {
 button#back-btn-koobo:hover {
   background-color: rgba(238, 133, 114, 0.2);
   color: white;
+}
+
+// AVATAR KITCHEN SHOW
+.avatar-show {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  object-fit: cover;
+  justify-content: space-between;
 }
