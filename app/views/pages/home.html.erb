@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <form class= "form-home p-4 col-md-4">
-      <h3> Cherchez votre cuisine </h3>
+      <!-- <h3> Cherchez votre cuisine </h3>
     <div class="form-group">
       <label for="inputAddress">Adresse</label>
       <input type="text" class="form-control" id="inputAddress" placeholder="Où vous voulez...">
@@ -39,18 +39,60 @@
       </div>
     </div>
 
-      <%= link_to "Rechercher", kitchens_path, class: "btn btn-flat" %>
-  </form>
-
-  <%= form_tag kitchens_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Ville"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-
+      <%= link_to "Rechercher", kitchens_path, class: "btn btn-flat" %> -->
+<!--   </form>
+ -->
+  <div class="row">
+    <h3> Trouvez votre cuisine </h3>
+    <div class="form-group">
+      <%= form_tag kitchens_path, multipart: true, method: :get do %>
+        <%= text_field_tag :query_address,
+          params[:query_address],
+          class: "form-control",
+          id: "inputAddress",
+          placeholder: "Adresse"
+        %>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+          <%= text_field_tag :query_city,
+            params[:query_city],
+            class: "form-control",
+            id: "inputCity",
+            placeholder: "Ville"
+          %>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+      </div>
+    <div class="form-row">
+      <div class="form-group">
+          <%= date_field_tag :query_start_date,
+            params[:query_start_date],
+            class: "form-control datepicker",
+            placeholder: "Date d'arrivée"
+          %>
+     </div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+      </div>
+    <div class="form-group">
+        <%= date_field_tag :query_end_date,
+          params[:query_end_date],
+          class: "form-control datepicker",
+          placeholder: "Date de départ"
+        %>
+     </div>
+    </div>
+        <%= submit_tag "Rechercher", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
 
     <div class="col-md-6 offset-md-2">
       <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
