@@ -1,60 +1,88 @@
-<div class="container d-flex">
-  <div class="wrapper-left">
-    <div class="container p-2 bd-highlight">
-      <div class="row my-5">
-        <div class="card profile-card-1 sticky-top!">
-          <img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile-image" class="profile"/>
-            <div class="card-content">
-              <h2><%= @user.first_name %>  <%= @user.last_name %></h2>
-            <div class="reviews mt-3">
-              <a href="#">Vos avis</a>
-            </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper-right">
 
-    <div class="container p-2 mt-5 ml-5 bd-highlight">
-      <h2><strong>Location à venir</strong></h2>
-      <div class="card-trip mb-5">
-      <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
-        <div class="card-trip-infos">
-
-              <h2> Cuisine Edouard </h2>
-              <p> Cuisine idéale pour les végétariens !  - 3 avenue Bonaparte, Levallois </p>
-
-        </div>
-      </div>
-    </div>
-    <div class="container p-2 mt-5 ml-5 bd-highlight">
-      <h2><strong>Demande(s) en cours</strong></h2>
-      <div class="card-trip mb-5">
-      <img src="https://images.unsplash.com/photo-1541604193435-22287d32c2c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
-        <div class="card-trip-infos">
-
-          <h2> Cuisine Brigitte </h2>
-          <p> Cuisine pour les affamés.  - 45 rue du bois, Boulogne</p>
-
-        </div>
-      </div>
-    </div>
-    <div class="container p-2 mt-5 ml-5 bd-highlight">
-      <h2><strong>Locations passées</strong></h2>
-        <div class="card-trip">
-        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
-          <div class="card-trip-infos">
-
-
-            <h2> Cuisine Mao </h2>
-            <p> Cuisine qui a tout vu. Surtout du pesto verde. - Montreuil</p>
-
+  <div class="container-fluid dashboard-flex">
+    <div class="wrapper-left">
+      <div class="container p-2 bd-highlight">
+        <div class="row my-5">
+          <div class="card profile-card-1">
+            <img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile-image" class="profile"/>
+              <div class="card-content">
+                <h2><%= @user.first_name %>  <%= @user.last_name %></h2>
+              <div class="reviews mt-3">
+                <a href="#">Vos avis</a>
+              </div>
+              </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="wrapper-right">
+
+    <div class="container p-2 mt-5 bd-highlight">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Location(s) à venir</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Demande(s) en cours</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Location(s) passée(s)</a>
+        </div>
+      </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="dashboard-cards cards">
+              <% @kitchens.each do |kitchen| %>
+                <div class="dashboard-card card-trip">
+                      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                    <div class="card-trip-infos">
+                      <div class="text-left">
+                        <h2><%= link_to kitchen.name, kitchen_path(kitchen) %></h2>
+                        <p><%= kitchen.address %>, <%= kitchen.city %></p>
+                      </div>
+                      <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                    </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="dashboard-cards cards">
+              <% @kitchens.each do |kitchen| %>
+                <div class="dashboard-card card-trip">
+                      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                    <div class="card-trip-infos">
+                      <div class="text-left">
+                        <h2><%= link_to kitchen.name, kitchen_path(kitchen) %></h2>
+                        <p><%= kitchen.address %>, <%= kitchen.city %></p>
+                      </div>
+                      <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                    </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="dashboard-cards cards">
+              <% @kitchens.each do |kitchen| %>
+                <div class="dashboard-card card-trip">
+                      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                    <div class="card-trip-infos">
+                      <div class="text-left">
+                        <h2><%= link_to kitchen.name, kitchen_path(kitchen) %></h2>
+                        <p><%= kitchen.address %>, <%= kitchen.city %></p>
+                      </div>
+                      <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                    </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>
+
+
+
+
 

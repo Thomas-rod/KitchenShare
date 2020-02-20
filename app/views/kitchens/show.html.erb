@@ -28,7 +28,7 @@
     <% end %>
   </div>
   <div class="wrapper">
-    <div class="wrapper-left">
+    <div class="wrapper-left-ktichen">
       <h1><%= @kitchen.name %><%= cl_image_tag User.find(@kitchen.user_id).photo.key, height: 300, width: 400, crop: :fill, class: "avatar-show ml-3" %></h1>
       <div class="border-show">
         <p><strong>Description</strong></p>
@@ -48,8 +48,8 @@
         </ul>
       </div>
     </div>
-    <div class="wrapper-right ml-5">
-      <div id="map" class="mb-3 map-kitchen"
+    <div class="wrapper-right-kitchen ml-5">
+      <div id="map" class="mb-3"
          style="width: 96%;
          height: 40vh;"
          data-markers="<%= @marker.to_json %>"
