@@ -1,10 +1,12 @@
-
+.dashboard-flex{
+  display: flex;
+}
 .profile-card-1 {
   font-family: 'Poppins', Arial, sans-serif;
   position: relative;
   float: left;
   overflow: hidden;
-  width: 100%;
+  width: 270px;
   color: #ffffff;
   text-align: center;
   height:278px;
@@ -77,6 +79,46 @@
   color: white;
 }
 .reviews a:hover {
+  color: #EE8572;
+  text-decoration: none;
+}
+
+.dashboard-card {
+  width: 557px;
+}
+
+.dashboard-cards {
+  margin: 0 auto;
+  width: auto !important;
+}
+
+.wrapper-right {
+  margin: 0 auto;
+}
+
+a#nav-home-tab {
+  color: black;
+}
+
+a:hover#nav-home-tab  {
+  color: #EE8572;
+  text-decoration: none;
+}
+
+a#nav-profile-tab {
+  color: black;
+}
+
+a:hover#nav-profile-tab  {
+  color: #EE8572;
+  text-decoration: none;
+}
+
+a#nav-contact-tab {
+  color: black;
+}
+
+a:hover#nav-contact-tab  {
   color: #EE8572;
   text-decoration: none;
 }
