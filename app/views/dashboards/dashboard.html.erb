@@ -4,7 +4,7 @@
       <div class="row my-5">
         <div class="card profile-card-1">
           <img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile-image" class="profile"/>
+          <%= image_tag current_user.photo, alt: "profile-image", class: "profile" %>
             <div class="card-content">
               <h2><%= @user.first_name %>  <%= @user.last_name %></h2>
             <div class="reviews mt-3">
