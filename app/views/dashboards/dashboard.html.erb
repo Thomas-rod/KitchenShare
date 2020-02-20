@@ -29,13 +29,16 @@
             <div class="dashboard-cards ">
               <% @kitchens.each do |kitchen| %>
                 <div class="dashboard-card card-trip">
-                      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                  <!-- A MODIFIER PAR LES PHOTOS DE LA KITCHEN DIRECTEMENT, JUSTE LA PREMIERE -->
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
                     <div class="card-trip-infos">
                       <div class="text-left">
                         <h2><%= link_to kitchen.name, kitchen_path(kitchen) %></h2>
                         <p><%= kitchen.address %>, <%= kitchen.city %></p>
                       </div>
+                      <!-- PEUT ETRE SUPPRIMER LE PRIX POUR LES LOCATAIONS QUI ONT ETE ACCEPTEES -->
                       <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+                      <!-- A MODIFIER PAR LES PHOTOS DU PROPRIETAIRE -->
                       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                     </div>
                 </div>
@@ -44,17 +47,22 @@
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             <div class="dashboard-cards">
+              <%  %>
               <% @kitchens.each do |kitchen| %>
+                <% Booking.where(["kitchen_id = ? and user_id = ?",kitchen , current_user]).each do %>
                 <div class="dashboard-card card-trip">
-                      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                  <!-- A MODIFIER PAR LES PHOTOS DE LA KITCHEN DIRECTEMENT, JUSTE LA PREMIERE -->
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
                     <div class="card-trip-infos">
                       <div class="text-left">
                         <h2><%= link_to kitchen.name, kitchen_path(kitchen) %></h2>
                         <p><%= kitchen.address %>, <%= kitchen.city %></p>
                       </div>
                       <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+                      <!-- A MODIFIER PAR LES PHOTOS DU PROPRIETAIRE -->
                       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                     </div>
+                  <% end %>
                 </div>
               <% end %>
             </div>
@@ -63,6 +71,7 @@
             <div class="dashboard-cards">
               <% @kitchens.each do |kitchen| %>
                 <div class="dashboard-card card-trip">
+                  <!-- A MODIFIER PAR LES PHOTOS DE LA KITCHEN DIRECTEMENT, JUSTE LA PREMIERE -->
                       <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
                     <div class="card-trip-infos">
                       <div class="text-left">
@@ -70,6 +79,7 @@
                         <p><%= kitchen.address %>, <%= kitchen.city %></p>
                       </div>
                       <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+                      <!-- A MODIFIER PAR LES PHOTOS DU PROPRIETAIRE -->
                       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                     </div>
                 </div>
