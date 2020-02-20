@@ -17,7 +17,8 @@
   justify-content: space-between;
   align-items: start;
 }
-.wrapper-left {
+.wrapper-left-ktichen {
+  width: 450px;
   & p {
     margin-top: 10px;
   }
@@ -32,7 +33,7 @@
     padding: 10px;
   }
 }
-.wrapper-right {
+.wrapper-right-kitchen {
   text-align:center;
   flex-grow: 1;
   & ul {
