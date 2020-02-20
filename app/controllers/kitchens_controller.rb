@@ -10,9 +10,7 @@ class KitchensController < ApplicationController
 
     if params[:query].present?
       # @kitchens = Kitchen.where(address: params[:query_address])
-      @kitchens = Kitchen.where(city: params[:query_city])
-      # @kitchens = Kitchen.where(city: params[:query_start_date])
-      # @kitchens = Kitchen.where(city: params[:query_end_date])
+      @kitchens = Kitchen.where(city: params[:query])
     else
       @kitchens = Kitchen.all
     end
