@@ -20,3 +20,29 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+.container-form-home {
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  width: 10em;
+}
+
+.input-group-text {
+  height: calc(1.5em + 0.75rem + 2px);
+}
+
+.date-section {
+ display: flex;
+}
+
+.form-home {
+  max-width: 100%;
+  box-shadow: -1px 0px 5px 3px #777373d1
+}
+
+.roxane {
+  display: flex;
+}
