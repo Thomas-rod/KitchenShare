@@ -3,7 +3,7 @@
     <ul>
       <% @kitchens.each do |kitchen| %>
         <% kitchen.photos.each do |photo| %>
-            <%= cl_image_tag kitchen.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
         <li class="card"><%= link_to kitchen.name, kitchen_path(kitchen) %>, <%= kitchen.address %>, <%= kitchen.city %></li>
       <% end %>
