@@ -1,16 +1,18 @@
 class KitchensController < ApplicationController
   def index
-    # if params[:query].present?
-    #   @kitchens = Kitchen.where(city: params[:query])
-    # else
-    #   @kitchens = Kitchen.all
-    # end
     @kitchens = Kitchen.geocoded
     @markers = @kitchens.map do |kitchen|
       {
         lat: kitchen.latitude,
         lng: kitchen.longitude
       }
+    end
+
+    if params[:query].present?
+      # @kitchens = Kitchen.where(address: params[:query_address])
+      @kitchens = Kitchen.where(city: params[:query])
+    else
+      @kitchens = Kitchen.all
     end
   end
 

@@ -1,9 +1,10 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
-<div class="container">
+<div class="container d-flex">
   <div class="row">
-    <form class= "form-home p-4 col-md-4">
-      <h3> Cherchez votre cuisine </h3>
+    <div class= "form-home p-4 col-md-4">
+      <div class="container-form-home">
+      <!-- <h3> Cherchez votre cuisine </h3>
     <div class="form-group">
       <label for="inputAddress">Adresse</label>
       <input type="text" class="form-control" id="inputAddress" placeholder="Où vous voulez...">
@@ -39,9 +40,71 @@
       </div>
     </div>
 
-      <%= link_to "Rechercher", kitchens_path, class: "btn btn-flat" %>
+      <%= link_to "Rechercher", kitchens_path, class: "btn btn-flat" %> -->
+<!--   </form>
+ -->
+</div>
+  <div class="row">
+    <h3 class="ml-5 mb-3"> Trouvez votre cuisine </h3>
+    <div class="form-row">
+    <div class="form-group w-100">
+      <%= form_tag kitchens_path, method: :get do %>
+        <%= text_field_tag :query_address,
+          params[:query_address],
+          class: "form-control w-90",
+          id: "inputAddress",
+          placeholder: "Adresse"
+        %>
+        </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group w-100 ml-1">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control w-90 ml-1",
+            id: "inputCity",
+            placeholder: "Ville"
+          %>
+      </div>
+    </div>
+    <div class="date-section d-flex justify-content-start">
+      <div class="input-group mb-3">
+        <div class="roxane d-flex justify-content-start">
+        <div class="input-group-prepend mr-n1">
+          <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+        </div>
+      <div class="form-row">
+        <div class="form-group mb-2">
+          <%= date_field_tag :query_datestart,
+            params[:query_datestart],
+            class: "form-control datepicker",
+            placeholder: "Date d'arrivée"
+          %>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="roxane d-flex justify-content-start">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+      </div>
+    <div class="form-group mb-2">
+        <%= date_field_tag :query_dateend,
+          params[:query_dateend],
+          class: "form-control datepicker",
+          placeholder: "Date de départ"
+        %>
+        </div>
+     </div>
+    </div>
+     </div>
+        <%= submit_tag "Rechercher", class: "btn btn-flat mx-auto" %>
+      <% end %>
+    </div>
+  </div>
+  </div>
 
-  </form>
     <div class="col-md-6 offset-md-2">
       <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
       <p>Nos propriétaires fournissent leurs cuisines equipées pour vous rendre service.</p>
