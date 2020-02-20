@@ -1,15 +1,17 @@
 .dashboard-flex{
   display: flex;
+  justify-content: flex-end;
 }
 .profile-card-1 {
   font-family: 'Poppins', Arial, sans-serif;
-  position: relative;
+  margin-right:50px;
+  margin-top: 15px;
   float: left;
   overflow: hidden;
-  width: 270px;
+  width: 360px;
+  height:400px;
   color: #ffffff;
   text-align: center;
-  height:278px;
   border:none;
 }
 .profile-card-1 .background {
@@ -84,7 +86,7 @@
 }
 
 .dashboard-card {
-  width: 557px;
+  width: 573px;
 }
 
 .dashboard-cards {
@@ -93,8 +95,18 @@
 }
 
 .wrapper-right {
-  margin: 0 auto;
+  // margin: 0 auto;
+ min-width: 620px;
+ padding: 15px;
+ margin-right: 158px;
 }
+
+.wrapper-left {
+  position: sticky;
+  top:15px;
+  align-self: flex-start;
+}
+
 
 a#nav-home-tab {
   color: black;
@@ -122,3 +134,4 @@ a:hover#nav-contact-tab  {
   color: #EE8572;
   text-decoration: none;
 }
+
