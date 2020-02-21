@@ -11,13 +11,13 @@
     <% end %>
   <div class="container index-container mt-5 mb-5">
 
-  <div class="cards cards-index">
+  <div class="cards cards-index" id = "index-cards">
 
   <% number = 0 %>
   <% @kitchens.each do |kitchen| %>
   <% number += 1 %>
 
-        <div class="card-trip">
+        <div class="card-trip card-trip-index">
           <div id="carouselExampleIndicators<%= number %>" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators<%= number %>" data-slide-to="0" class="active"></li>

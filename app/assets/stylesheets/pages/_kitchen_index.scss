@@ -23,7 +23,15 @@
   grid-template-columns: 1fr;
   grid-gap: 25px;
   width: 1000px;
-  max-height: 270px;
+}
+
+#index-cards {
+  display: block;
+}
+
+.card-trip-index{
+  height: 270px;
+  margin-bottom: 25px;
 }
 
 #map {
