@@ -55,7 +55,13 @@
          data-markers="<%= @marker.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <button class="btn-koobo">  <%= link_to "Je réserve cette cuisine", new_kitchen_booking_path(@kitchen) %></button>
+      <button class="btn-koobo">
+        <% if user_signed_in? %>
+          <%= link_to "Je réserve cette cuisine", new_kitchen_booking_path(@kitchen)%>
+        <% else %>
+          <%= link_to "Je réserve cette cuisine", new_user_registration_path %>
+        <% end %>
+      </button>
     </div>
   </div>
 </div>
