@@ -202,6 +202,10 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    turbolinks-source (5.2.0)
+    turbolinks_render (0.9.17)
+      rails (>= 5.2.0)
+      turbolinks-source (~> 5.1)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
@@ -248,6 +252,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  turbolinks_render
   uglifier
   web-console (>= 3.3.0)
   webpacker
