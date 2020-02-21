@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     @booking.kitchen = @kitchen
     @booking.user = @user
     if @booking.save
+      flash[:notice] = "Votre réservation a bien été enregistrée"
       redirect_to dashboard_path
     else
       render :new
