@@ -1,70 +1,67 @@
 
 <div class="banner banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
-<div class="container d-flex">
-  <div class="row">
-    <div class= "form-home p-4 col-md-4">
-      <!-- <div class="container-form-home"> -->
-    <h3 class = "titre-form-home mb-3"> <strong>Cherchez une cuisine selon vos envies</strong></h3>
-    <p class = "lolo mb-2" id = "p-form"> Où ? </p>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <%= form_tag kitchens_path, method: :get do %>
-        <%= text_field_tag :query_address,
-          params[:query_address],
-          class: "form-control ",
-          id: "inputAddress",
-          placeholder: "Adresse"
-        %>
-      </div>
-      <div class="form-group col-md-6">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control ",
-          id: "inputCity",
-          placeholder: "Ville"
-        %>
-      </div>
-    </div>
+  <div class="container d-flex">
+    <div class="row">
+      <div class= "form-home p-4 col-md-4">
+        <h3 class = "titre-form-home mb-3"> <strong>Cherchez une cuisine selon vos envies</strong></h3>
+        <p class = "lolo mb-2" id = "p-form"> Où ? </p>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label class="label-home" for="inputCity">Arrivée</label>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
-            </div>
-             <%= date_field_tag :query_datestart,
-              params[:query_datestart],
-              class: "form-control datepicker",
-              placeholder: "Date d'arrivée"
-            %>
-          </div>
+          <%= form_tag kitchens_path, method: :get do %>
+          <%= text_field_tag :query_address,
+            params[:query_address],
+            class: "form-control ",
+            id: "inputAddress",
+            placeholder: "Adresse"
+          %>
         </div>
         <div class="form-group col-md-6">
-          <label class="label-home"for="inputZip">Départ</label>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
-            </div>
-            <%= date_field_tag :query_dateend,
-            params[:query_dateend],
-            class: "form-control datepicker",
-            placeholder: "Date de départ"
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control ",
+            id: "inputCity",
+            placeholder: "Ville"
           %>
-          </div>
         </div>
       </div>
-        <%= submit_tag "Rechercher", class: "a-home btn btn-flat mx-auto" %>
-        <% end %>
-    </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label class="label-home" for="inputCity">Arrivée</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+              </div>
+               <%= date_field_tag :query_datestart,
+                params[:query_datestart],
+                class: "form-control datepicker",
+                placeholder: "Date d'arrivée"
+              %>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="label-home"for="inputZip">Départ</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+              </div>
+              <%= date_field_tag :query_dateend,
+              params[:query_dateend],
+              class: "form-control datepicker",
+              placeholder: "Date de départ"
+            %>
+            </div>
+          </div>
+        </div>
+          <%= submit_tag "Rechercher", class: "a-home btn btn-flat mx-auto" %>
+          <% end %>
+      </div>
 
-    <div class="col-md-6 offset-md-2">
-      <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
-      <p>Nos propriétaires fournissent leurs cuisines equipées pour vous rendre service.</p>
+      <div class="col-md-6 offset-md-2">
+        <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
+        <p>Nos propriétaires fournissent leurs cuisines equipées pour vous rendre service.</p>
+      </div>
     </div>
   </div>
-
-</div>
-
 </div>
 
 <div class="container carouselhome mt-5">
@@ -92,7 +89,7 @@
     </div>
     <div class="carousel-item">
       <%= image_tag "cuisine_4.png", alt: "cuisine", class: "d-block w-100" %>
-          <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-md-block">
         <h5>Paris 7eme</h5>
         <p>Cuisine de Bernard 8€/h</p>
       </div>
