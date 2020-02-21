@@ -11,7 +11,7 @@ class KitchensController < ApplicationController
         lat: kitchen.latitude,
         lng: kitchen.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { kitchen: kitchen }),
-        image_url: helpers.asset_url('kitchenshare1.png')
+        image_url: helpers.asset_url('cook-icon.png')
       }
     end
   end
