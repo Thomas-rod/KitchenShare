@@ -7,7 +7,7 @@
         <p class = "lolo mb-2" id = "p-form"> Où ? </p>
         <%= form_tag kitchens_path, method: :get do %>
           <div class="form-row">
-            <div class="form-group col-md-6s">
+            <div class="form-group col-md-6">
               <%= text_field_tag :query_address,
                 params[:query_address],
                 class: "form-control",
