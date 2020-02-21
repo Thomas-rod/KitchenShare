@@ -29,7 +29,7 @@
   </div>
   <div class="wrapper">
     <div class="wrapper-left-ktichen">
-      <h1><%= @kitchen.name %><%= cl_image_tag User.find(@kitchen.user_id).photo.key, height: 300, width: 400, crop: :fill, class: "avatar-show ml-3" %></h1>
+      <h1><%= @kitchen.name %><%= cl_image_tag User.find(@kitchen.user_id).photo.key, class: " avatar-large avatar-show ml-3" %></h1>
       <div class="border-show">
         <p><strong>Description</strong></p>
         <p><i>"<%= @kitchen.description %>"</i></p>

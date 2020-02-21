@@ -20,11 +20,10 @@
 // }
 
 .cards-index {
-  display: grid;
   grid-template-columns: 1fr;
   grid-gap: 25px;
-  flex-grow: 1;
   width: 1000px;
+  max-height: 270px;
 }
 
 #map {
@@ -35,4 +34,8 @@
 
 .search-bar {
   display: flex;
+}
+
+.a-home {
+  font-weight: bold;
 }
