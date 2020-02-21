@@ -48,7 +48,7 @@
             <h2><%= link_to kitchen.name, kitchen_path(kitchen) %></h2>
             <p><%= kitchen.address %>, <%= kitchen.city %></p>
           </div>
-          <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/heure</h2>
+          <h2 class="card-trip-pricing"><%= kitchen.price_by_hour %>€/jour</h2>
           <%= cl_image_tag kitchen.user.photo.key , class: "card-trip-user avatar-bordered" %>
         </div>
     </div>
