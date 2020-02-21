@@ -20,11 +20,18 @@
 // }
 
 .cards-index {
-  display: grid;
   grid-template-columns: 1fr;
   grid-gap: 25px;
-  flex-grow: 1;
   width: 1000px;
+}
+
+#index-cards {
+  display: block;
+}
+
+.card-trip-index{
+  height: 270px;
+  margin-bottom: 25px;
 }
 
 #map {
@@ -35,4 +42,8 @@
 
 .search-bar {
   display: flex;
+}
+
+.a-home {
+  font-weight: bold;
 }
