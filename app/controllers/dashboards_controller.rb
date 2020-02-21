@@ -5,8 +5,8 @@ class DashboardsController < ApplicationController
   def dashboard
     @bookings = Booking.where(["user_id = ?", current_user])
     #@bookings_comming = @bookings.where(["accepted = ?", 'accepted'])
-    @bookings_comming = @bookings.where("start_time > ?", Time.now)
-    @bookings_pending = @bookings.where("accepted != ?", 'accepted')
+    @bookings_comming = @bookings.where("start_time > ? and accepted != ?", Time.now, 'pending')
+    @bookings_pending = @bookings.where("accepted = ?", 'pending')
     @bookings_past = @bookings.where("start_time < ?", Time.now)
     if user_signed_in?
       @user = current_user

@@ -1,112 +1,118 @@
-
 <div class="banner banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1556911261-6bd341186b2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);">
-<div class="container d-flex">
-  <div class="row">
-    <div class= "form-home p-4 col-md-4">
-      <!-- <div class="container-form-home"> -->
-    <h3 class = "titre-form-home mb-3"> <strong>Cherchez une cuisine selon vos envies</strong></h3>
-    <p class = "lolo mb-2" id = "p-form"> Où ? </p>
-    <div class="form-row">
-      <div class="form-group col-md-6">
+  <div class="container d-flex">
+    <div class="row">
+      <div class= "form-home p-4 col-md-4">
+        <!-- <div class="container-form-home"> -->
+        <h3 class = "titre-form-home mb-3"> <strong>Cherchez une cuisine selon vos envies</strong></h3>
+        <p class = "lolo mb-2" id = "p-form"> Où ? </p>
         <%= form_tag kitchens_path, method: :get do %>
-        <%= text_field_tag :query_address,
-          params[:query_address],
-          class: "form-control ",
-          id: "inputAddress",
-          placeholder: "Adresse"
-        %>
-      </div>
-      <div class="form-group col-md-6">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control ",
-          id: "inputCity",
-          placeholder: "Ville"
-        %>
-      </div>
-    </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label class="label-home" for="inputCity">Arrivée</label>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+          <div class="form-row">
+            <div class="form-group col-md-6s">
+              <%= text_field_tag :query_address,
+                params[:query_address],
+                class: "form-control",
+                id: "inputAddress",
+                placeholder: "Adresse"
+              %>
             </div>
-             <%= date_field_tag :query_datestart,
-              params[:query_datestart],
+            <div class="form-group col-md-6">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control ",
+                id: "inputCity",
+                placeholder: "Ville"
+              %>
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label class="label-home" for="inputCity">Arrivée</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+              </div>
+               <%= date_field_tag :query_datestart,
+                params[:query_datestart],
+                class: "form-control datepicker",
+                placeholder: "Date d'arrivée"
+              %>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="label-home"for="inputZip">Départ</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
+              </div>
+              <%= date_field_tag :query_dateend,
+              params[:query_dateend],
               class: "form-control datepicker",
-              placeholder: "Date d'arrivée"
+              placeholder: "Date de départ"
             %>
-          </div>
-        </div>
-        <div class="form-group col-md-6">
-          <label class="label-home"for="inputZip">Départ</label>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-calendar-alt"></i></span>
             </div>
-            <%= date_field_tag :query_dateend,
-            params[:query_dateend],
-            class: "form-control datepicker",
-            placeholder: "Date de départ"
-          %>
           </div>
         </div>
+          <%= submit_tag "Rechercher", class: "a-home btn btn-flat mx-auto" %>
+          <% end %>
       </div>
-        <%= submit_tag "Rechercher", class: "a-home btn btn-flat mx-auto" %>
-        <% end %>
+
+
+
+
+      <div class="col-md-6 offset-md-2">
+        <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
+        <p>Nos propriétaires fournissent leurs cuisines equipées pour vous rendre service.</p>
+      </div>
     </div>
 
-    <div class="col-md-6 offset-md-2">
-      <h1>KitchenShare - <strong>trouvez la cuisine </strong> qui correspond <strong>à vos besoins</strong>!</h1>
-      <p>Nos propriétaires fournissent leurs cuisines equipées pour vous rendre service.</p>
     </div>
+
   </div>
 
-</div>
-
-</div>
-
-<div class="container carouselhome mt-5">
-  <h1> Les cuisines qui ont ravi nos clients </h1>
-  <div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag "cuisine_mao_1.png", alt: "cuisine", class: "d-block w-100" %>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Paris 5eme</h5>
-        <p>Cuisine de Jean jaques 8€/h</p>
+  <div class="container carouselhome mt-5">
+    <h1> Les cuisines qui ont ravi nos clients </h1>
+    <div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "cuisine_mao_1.png", alt: "cuisine", class: "d-block w-100" %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Paris 5eme</h5>
+          <p>Cuisine de Jean jaques 8€/h</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "cuisine_3.png", alt: "cuisine", class: "d-block w-100" %>
+            <div class="carousel-caption d-none d-md-block">
+          <h5>Paris 4eme</h5>
+          <p>Cuisine de Colette 7€/h</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "cuisine_4.png", alt: "cuisine", class: "d-block w-100" %>
+            <div class="carousel-caption d-none d-md-block">
+          <h5>Paris 7eme</h5>
+          <p>Cuisine de Bernard 8€/h</p>
+        </div>
       </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag "cuisine_3.png", alt: "cuisine", class: "d-block w-100" %>
-          <div class="carousel-caption d-none d-md-block">
-        <h5>Paris 4eme</h5>
-        <p>Cuisine de Colette 7€/h</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "cuisine_4.png", alt: "cuisine", class: "d-block w-100" %>
-          <div class="carousel-caption d-none d-md-block">
-        <h5>Paris 7eme</h5>
-        <p>Cuisine de Bernard 8€/h</p>
-      </div>
-    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+
+
+
+
 </div>
 
 
