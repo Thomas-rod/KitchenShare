@@ -74,14 +74,14 @@ button#back-btn-koobo:hover {
 }
 
 // AVATAR KITCHEN SHOW
-.avatar-show {
-  width: 100px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  object-fit: cover;
-  justify-content: space-between;
-}
+ .avatar-show {
+//   width: 100px;
+//   height: auto;
+//   border-radius: 50%;
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   object-fit: cover;
+//   justify-content: space-between;
+ }
 
 // MAP KITCHEN SHOW
 .map-kitchen {

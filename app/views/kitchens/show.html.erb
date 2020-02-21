@@ -29,14 +29,14 @@
   </div>
   <div class="wrapper">
     <div class="wrapper-left-ktichen">
-      <h1><%= @kitchen.name %><%= cl_image_tag User.find(@kitchen.user_id).photo.key, height: 300, width: 400, crop: :fill, class: "avatar-show ml-3" %></h1>
+      <h1><%= @kitchen.name %><%= cl_image_tag User.find(@kitchen.user_id).photo.key, class: " avatar-large avatar-show ml-3" %></h1>
       <div class="border-show">
         <p><strong>Description</strong></p>
         <p><i>"<%= @kitchen.description %>"</i></p>
       </div>
       <div class="border-show">
         <p><i class="fas fa-map-pin mr-3"></i></i><%= @kitchen.address %></p>
-        <p><i class="fas fa-euro-sign mr-3"></i><%= @kitchen.price_by_hour %>€/heure</p>
+        <p><i class="fas fa-euro-sign mr-3"></i><%= @kitchen.price_by_hour %>€/jour</p>
         <p><i class="fas fa-cookie mr-3"></i><%= @kitchen.capacity %> cuisinier</p>
       </div>
       <div class="border-show-last">
