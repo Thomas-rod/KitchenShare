@@ -6,11 +6,12 @@ class KitchensController < ApplicationController
     else
       @kitchens = Kitchen.all
     end
-
     @markers = @kitchens.map do |kitchen|
       {
         lat: kitchen.latitude,
-        lng: kitchen.longitude
+        lng: kitchen.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { kitchen: kitchen }),
+        image_url: helpers.asset_url('kitchenshare1.png')
       }
     end
   end
@@ -20,7 +21,7 @@ class KitchensController < ApplicationController
     @marker =
       [{
         lat: @kitchen.latitude,
-        lng: @kitchen.longitude
+        lng: @kitchen.longitude,
       }]
   end
 
