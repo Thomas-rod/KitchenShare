@@ -9,7 +9,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-datepicker": "^1.9.0",
     "flatpickr": "^4.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mapbox-gl": "^1.7.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
