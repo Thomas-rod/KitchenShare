@@ -52,8 +52,7 @@
       <div id="map" class="mb-3"
          style="width: 96%;
          height: 40vh;"
-         data-markers="<%= @marker.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+         data-markers="<%= @marker.to_json %>">
       </div>
       <button class="btn-koobo">
         <% if user_signed_in? %>
