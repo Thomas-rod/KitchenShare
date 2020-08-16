@@ -12,6 +12,7 @@
           <img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
           <%= cl_image_tag current_user.photo.key, class: "profile"%>
           <div class="card-content">
+            <h2>hello</h2>
             <h2><%= @user.first_name %>  <%= @user.last_name %></h2>
             <div class="reviews mt-3">
               <a href="#">Vos avis</a>
@@ -25,75 +26,71 @@
     <div class="container p-2 mt-5 bd-highlight">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Location(s) à venir</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Demande(s) en cours</a>
-          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Location(s) passée(s)</a>
+          <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Location à venir (<%= @bookings_comming.size %>)</a>
+          <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Demande en cours (<%= @bookings_pending.size %>)</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Location passée (<%= @bookings_past.size %>)</a>
         </div>
       </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="dashboard-cards ">
-              <% if !@bookings_comming.empty? %>
-                <% @bookings_comming.each do |booking| %>
-                  <div class="dashboard-card card-trip">
-                      <%= cl_image_tag booking.kitchen.photos[0].key, class: "d-block w-100 image"%>
-                      <div class="card-trip-infos">
-                        <div class="text-left">
-                          <h2><%= link_to booking.kitchen.name, kitchen_path(booking.kitchen) %></h2>
-                          <p><%= booking.kitchen.address %>, <%= booking.kitchen.city %></p>
-                        </div>
-                        <h2 class="card-trip-pricing"><%= booking.kitchen.price_by_hour %>€/heure</h2>
-                        <%= cl_image_tag booking.kitchen.user.photo.key, class: "card-trip-user avatar-bordered"%>
-                      </div>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="dashboard-cards ">
+            <% if !@bookings_comming.empty? %>
+              <% @bookings_comming.each do |booking| %>
+                <div class="dashboard-card card-trip">
+                  <%= cl_image_tag booking.kitchen.photos[0].key, class: "d-block w-100 image"%>
+                  <div class="card-trip-infos">
+                    <div class="text-left">
+                      <h2><%= link_to booking.kitchen.name, kitchen_path(booking.kitchen) %></h2>
+                      <p><%= booking.kitchen.address %>, <%= booking.kitchen.city %></p>
+                    </div>
+                    <h2 class="card-trip-pricing"><%= booking.kitchen.price_by_hour %>€/heure</h2>
+                    <%= cl_image_tag booking.kitchen.user.photo.key, class: "card-trip-user avatar-bordered"%>
                   </div>
-                <% end %>
+                </div>
               <% end %>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="dashboard-cards">
-              <% if !@bookings_pending.empty? %>
-                <% @bookings_pending.each do |booking| %>
-                  <div class="dashboard-card card-trip">
-                      <%= cl_image_tag booking.kitchen.photos[0].key, class: "d-block w-100 image"%>
-                      <div class="card-trip-infos">
-                        <div class="text-left">
-                          <h2><%= link_to booking.kitchen.name, kitchen_path(booking.kitchen) %></h2>
-                          <p><%= booking.kitchen.address %>, <%= booking.kitchen.city %></p>
-                        </div>
-                        <h2 class="card-trip-pricing"><%= booking.kitchen.price_by_hour %>€/heure</h2>
-                        <%= cl_image_tag booking.kitchen.user.photo.key, class: "card-trip-user avatar-bordered"%>
-                      </div>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <div class="dashboard-cards">
-              <% if !@bookings_past.empty? %>
-                <% @bookings_past.each do |booking| %>
-                  <div class="dashboard-card card-trip">
-                      <%= cl_image_tag booking.kitchen.photos[0].key, class: "d-block w-100 image"%>
-                      <div class="card-trip-infos">
-                        <div class="text-left">
-                          <h2><%= link_to booking.kitchen.name, kitchen_path(booking.kitchen) %></h2>
-                          <p><%= booking.kitchen.address %>, <%= booking.kitchen.city %></p>
-                        </div>
-                        <h2 class="card-trip-pricing"><%= booking.kitchen.price_by_hour %>€/heure</h2>
-                        <!-- A MODIFIER PAR LES PHOTOS DU PROPRIETAIRE -->
-                        <%= cl_image_tag booking.kitchen.user.photo.key, class: "card-trip-user avatar-bordered"%>
-                      </div>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
+        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="dashboard-cards">
+            <% if !@bookings_pending.empty? %>
+              <% @bookings_pending.each do |booking| %>
+                <div class="dashboard-card card-trip">
+                  <%= cl_image_tag booking.kitchen.photos[0].key, class: "d-block w-100 image"%>
+                  <div class="card-trip-infos">
+                    <div class="text-left">
+                      <h2><%= link_to booking.kitchen.name, kitchen_path(booking.kitchen) %></h2>
+                      <p><%= booking.kitchen.address %>, <%= booking.kitchen.city %></p>
+                    </div>
+                    <h2 class="card-trip-pricing"><%= booking.kitchen.price_by_hour %>€/heure</h2>
+                    <%= cl_image_tag booking.kitchen.user.photo.key, class: "card-trip-user avatar-bordered"%>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div class="dashboard-cards">
+            <% if !@bookings_past.empty? %>
+              <% @bookings_past.each do |booking| %>
+                <div class="dashboard-card card-trip">
+                  <%= cl_image_tag booking.kitchen.photos[0].key, class: "d-block w-100 image"%>
+                  <div class="card-trip-infos">
+                    <div class="text-left">
+                      <h2><%= link_to booking.kitchen.name, kitchen_path(booking.kitchen) %></h2>
+                      <p><%= booking.kitchen.address %>, <%= booking.kitchen.city %></p>
+                    </div>
+                    <h2 class="card-trip-pricing"><%= booking.kitchen.price_by_hour %>€/heure</h2>
+                    <!-- A MODIFIER PAR LES PHOTOS DU PROPRIETAIRE -->
+                    <%= cl_image_tag booking.kitchen.user.photo.key, class: "card-trip-user avatar-bordered"%>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-
-
-
-
-
