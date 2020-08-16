@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -9,10 +10,10 @@ const fitMapToMarkers = (map, markers) => {
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) {
-      mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+      mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
       const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v11',
       });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {

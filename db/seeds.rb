@@ -32,7 +32,7 @@ thomas.save
 mao = User.create!(first_name: "Maodo", last_name: "Diop", address: "12 rue Madeleine Laffitte, 93100, Montreuil", phone_number: "0663906049", email: "maodod1@gmail.com", password: "876587")
 attach_photo_user("https://avatars1.githubusercontent.com/u/56120487?v=4", mao)
 mao.save
-renaud = User.create!(first_name: "Renaud", last_name: "Dor", address: "6 rue de la Boétie, 75006, Paris", phone_number: "0674563457", email: "bebere@gmail.com", password: "098709")
+renaud = User.create!(first_name: "Renaud", last_name: "Dor", address: "6 Rue de Penthièvre, 75008, Paris", phone_number: "0674563457", email: "bebere@gmail.com", password: "098709")
 attach_photo_user("https://avatars2.githubusercontent.com/u/17413076?v=4", renaud)
 renaud.save
 eniko = User.create!(first_name: "Eniko", last_name: "Guti", address: "24 Rue Saint-Pierre, 94220, Charenton-le-Pont", phone_number: "0636458790", email: "fatfat@gmail.com", password: "167384")
@@ -63,11 +63,11 @@ john_kitchen = Kitchen.create!(city: "Bezons", address: "2 avenue d'Argenteuil, 
 attach_photo_kitchen("https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", john_kitchen)
 attach_photo_kitchen("https://images.unsplash.com/photo-1556909172-54557c7e4fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", john_kitchen)
 john_kitchen.save
-mao_kitchen = Kitchen.create!(city: "Montreuil", address: "12 rue Madeleine Laffitte, 93100", capacity: 3, user: mao, description: "Cuistot connu dans tout Montreuil je vous propose également mes conseils", name: "Mao's kitchen", equipment: "Micro-ondes, Plaques, Four, Robot", price_by_hour: 15)
+mao_kitchen = Kitchen.create!(city: "Montreuil", address: "12 rue Madeleine Laffitte, 93100", capacity: 3, user: mao, description: "Cuistot connu dans tout Montreuil, je vous propose également mes conseils", name: "Mao's kitchen", equipment: "Micro-ondes, Plaques, Four, Robot", price_by_hour: 15)
 attach_photo_kitchen("https://images.unsplash.com/photo-1563298723-dcfebaa392e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80", mao_kitchen)
 attach_photo_kitchen("https://images.unsplash.com/photo-1507810184465-fe14fff93967?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80", mao_kitchen)
 mao_kitchen.save
-renaud_kitchen = Kitchen.create!(city: "Paris", address: "6 rue de la Boétie, 75008", capacity: 2, user: renaud, description: "Petite cuisine aménagée pour des préparations rapide", name: "Renaud's kitchen", equipment: "Four, Plaques, Casseroles, Nombreux ustensiles", price_by_hour: 8)
+renaud_kitchen = Kitchen.create!(city: "Paris", address: "6 Rue de Penthièvre, 75008", capacity: 2, user: renaud, description: "Petite cuisine aménagée pour des préparations rapide", name: "Renaud's kitchen", equipment: "Four, Plaques, Casseroles, Nombreux ustensiles", price_by_hour: 8)
 attach_photo_kitchen("https://images.unsplash.com/photo-1556185781-a47769abb7ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", renaud_kitchen)
 attach_photo_kitchen("https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", renaud_kitchen)
 renaud_kitchen.save
@@ -79,11 +79,11 @@ lital_kitchen = Kitchen.create!(city: "Paris", address: "13 rue de Vaugirard, 75
 attach_photo_kitchen("https://images.unsplash.com/photo-1556185781-a47769abb7ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", lital_kitchen)
 attach_photo_kitchen("https://images.unsplash.com/photo-1509023667260-6677209e6fdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", lital_kitchen)
 lital_kitchen.save
-ambre_kitchen = Kitchen.create!(city: "Paris", address: "16 Rue Raffet, 75016", capacity: 4, user: ambre, description: "Superbe cuisine pour toute vos envies", name: "Ambre's kitchen", equipment: "Plaques, Micro-ondes, Casseroles", price_by_hour: 9 )
+ambre_kitchen = Kitchen.create!(city: "Paris", address: "16 Rue Raffet, 75016", capacity: 4, user: ambre, description: "Superbe cuisine pour toutes vos envies", name: "Ambre's kitchen", equipment: "Plaques, Micro-ondes, Casseroles", price_by_hour: 9 )
 attach_photo_kitchen("https://images.unsplash.com/photo-1570439481373-4030305cb574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", ambre_kitchen)
 attach_photo_kitchen("https://images.unsplash.com/photo-1525802498323-c8fbf69eb42f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", ambre_kitchen)
 ambre_kitchen.save
-manu_kitchen = Kitchen.create!(city: "Paris", address: "2 rue Jean Dolent, 75013", capacity: 8, user: manu, description: "Immense cuisine aménagée pour tout vos besoins", name: "Manu's kitchen", equipment: "Four, Robots, Plats, Ustensiles", price_by_hour: 25)
+manu_kitchen = Kitchen.create!(city: "Paris", address: "2 rue Jean Dolent, 75013", capacity: 8, user: manu, description: "Immense cuisine aménagée pour tous vos besoins", name: "Manu's kitchen", equipment: "Four, Robots, Plats, Ustensiles", price_by_hour: 25)
 attach_photo_kitchen("https://images.unsplash.com/photo-1549089154-ad7b2808944c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", manu_kitchen)
 attach_photo_kitchen("https://images.unsplash.com/photo-1580237072617-771c3ecc4a24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", manu_kitchen)
 manu_kitchen.save
